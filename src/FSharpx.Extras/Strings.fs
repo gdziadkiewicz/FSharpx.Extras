@@ -78,7 +78,9 @@ module Strings =
         Pluralizer.toSingular noun
 
     // Active patterns & operators for parsing strings
-    let (@?) (s:string) i = if i >= s.Length then None else Some s.[i]
+
+    /// Gets the Char object at a specified position in the current String object wrapped in Some or None if the index is out of range.
+    let (@?) (s:string) i = if i >= s.Length || i < 0 then None else Some s.[i]
 
     let inline satisfies predicate (charOption:option<char>) = 
         match charOption with 

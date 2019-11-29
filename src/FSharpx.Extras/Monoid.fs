@@ -2,17 +2,13 @@
 
 /// Semigroup (set with associative binary operation)
 type ISemigroup<'T> =
-    /// <summary>
     /// Associative operation
-    /// </summary>
     abstract Combine : 'T * 'T -> 'T
     
 /// Monoid (associative binary operation with identity)
 [<AbstractClass>]
-type Monoid<'T>() as m =
-    /// <summary>
+type Monoid<'T>() =
     /// Identity
-    /// </summary>
     abstract Zero : unit -> 'T
 
     /// Associative operation
@@ -31,7 +27,7 @@ type Monoid<'T>() as m =
     member x.Delay f = f()
 
     interface ISemigroup<'T> with
-        member x.Combine(a,b) = m.Combine(a,b)
+        member x.Combine(a,b) = x.Combine(a,b)
 
 module Semigroup =
     let min<'T when 'T : comparison> = 
@@ -80,31 +76,37 @@ module Monoid =
     /// Monoid (int,1,*)
     let productInt : Monoid<int> = product()
 
+    /// Monoid (int,Int32.MaxValue,min)
     let minInt =
         { new Monoid<_>() with
             override this.Zero() = Int32.MaxValue
             override this.Combine(a,b) = min a b }
 
+    /// Monoid (int,Int32.MinValue,max)
     let maxInt =
         { new Monoid<_>() with
             override this.Zero() = Int32.MinValue
             override this.Combine(a,b) = max a b }
-
+    
+    /// Monoid (string,"",+)
     let string =
         { new Monoid<string>() with
             override this.Zero() = ""
             override this.Combine(a,b) = a + b }
 
+    /// Monoid (bool,true,&&)
     let all =
         { new Monoid<bool>() with
             override this.Zero() = true
             override this.Combine(a,b) = a && b }
 
+    /// Monoid (bool,false,||)
     let any = 
         { new Monoid<bool>() with
             override this.Zero() = false
             override this.Combine(a,b) = a || b }
 
+    /// Monoid (unit,(),konst2 ())
     let unit = 
         // can't write this as a direct Monoid object expression due to this F# bug http://stackoverflow.com/questions/4485445/f-interface-inheritance-failure-due-to-unit
         let inline create zero combine =
@@ -113,6 +115,7 @@ module Monoid =
                 override this.Combine(a,b) = combine a b }
         create () (fun _ _ -> ())
 
+    /// Monoid ('T -> 'T,id,<<)
     [<GeneralizableValue>]
     let endo<'T> = 
         { new Monoid<'T -> 'T>() with
@@ -120,43 +123,35 @@ module Monoid =
             override this.Combine(f,g) = f << g }
 
 namespace FSharpx.Collections
-
-    open System
-    open System.Linq
-    open System.Collections
-    open System.Collections.Generic
-    open System.Runtime.CompilerServices
     open FSharpx
-            
-    module Seq =
 
+    module Seq =
+        /// Monoid ('T seq,Seq.empty,Seq.append)
         let monoid<'T> =
             { new Monoid<seq<'T>>() with
                 override this.Zero() = Seq.empty
                 override this.Combine(a,b) = Seq.append a b
             }
 
-        let foldMap (monoid: _ Monoid) f =
-            Seq.fold (fun s e -> monoid.Combine(s, f e)) (monoid.Zero())
-    
-
+        let foldMap (monoid: _ Monoid) f xs =
+            Seq.fold (fun s x -> monoid.Combine(s, f x)) (monoid.Zero()) xs
 
     module List =
-                               
-        /// List monoid
+        /// Monoid ('T list,[],@)
         let monoid<'T> =
             { new Monoid<'T list>() with
                 override this.Zero() = []
                 override this.Combine(a,b) = a @ b }
 
     module Set =
+        /// Monoid ('T Set,Set.empty,Set.union)
         let monoid<'T when 'T : comparison> =
             { new Monoid<Set<'T>>() with
                 override this.Zero() = Set.empty
                 override this.Combine(a,b) = Set.union a b }
 
     module Map =
-            
+        /// Monoid ('T Map,Map.empty,Map.union)
         let monoid<'key, 'value when 'key : comparison> =
             { new Monoid<Map<'key, 'value>>() with
                 override this.Zero() = Map.empty
@@ -164,6 +159,7 @@ namespace FSharpx.Collections
 
 
     module ByteString = 
+        /// Monoid (ByteString,ByteString.empty,ByteString.append)
         let monoid =
             { new Monoid<_>() with
                 override x.Zero() = ByteString.empty
