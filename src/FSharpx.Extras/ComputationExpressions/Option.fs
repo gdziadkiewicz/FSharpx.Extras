@@ -231,7 +231,12 @@ module Option =
             | (false,      _) -> None
 
     /// Concatenates an option of option.
+    [<Obsolete("Use Option.join instead.")>]
     let inline concat x = 
+        x >>= id
+
+    /// Removes one level of option.
+    let inline join x = 
         x >>= id
 
     let inline isNone (o:Option<'a>) : bool =
