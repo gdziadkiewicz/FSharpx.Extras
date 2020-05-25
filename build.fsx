@@ -15,7 +15,12 @@ open Fake.Tools
 open System
 open System.IO
 open System.Xml.Linq
+open Fake.BuildServer
 
+BuildServer.install [
+    AppVeyor.Installer
+    Travis.Installer
+]
 // --------------------------------------------------------------------------------------
 // START TODO: Provide project-specific details below
 // --------------------------------------------------------------------------------------
