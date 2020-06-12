@@ -106,6 +106,13 @@ module Result =
         member _.Zero() = Ok ()
         member _.Delay f = f
         member _.Run f = f()
+        member this.Combine(r1, r2) =
+            match r1 with
+            | Ok x -> Ok x
+            | Error _ ->
+                match this.Run(r2) with
+                | Ok y -> Ok y
+                | Error e -> Error e
 
         member this.TryWith(m, h) =
             try this.ReturnFrom(m)
@@ -119,7 +126,7 @@ module Result =
             this.TryFinally(body res, fun () -> if not (isNull (box res)) then res.Dispose())
 
 
-        member this.While(guard, f) =
+        member this.While(guard, f) = // Check just for fun if the emited code is tail-recursive ( maybe some very quick test that will kill the stack if it's not?)  
             if not (guard()) then
                 this.Zero()
             else
@@ -130,4 +137,5 @@ module Result =
             this.Using(sequence.GetEnumerator(),
                                  fun enum -> this.While(enum.MoveNext, this.Delay(fun () -> body enum.Current)))
 
+    /// TODO: Long and detailed comment about what to expect from the builder
     let result = ResultBuilder()

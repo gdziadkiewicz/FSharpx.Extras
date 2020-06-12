@@ -143,3 +143,42 @@ let ``use should dispose underlying IDisposable on Error``() =
       disposeChecker.Disposed |> shouldEqual true
       r |> shouldEqual None
     )
+
+[<Test>]
+let ``Alternative should work as expected in Result`` () =
+  let result : int option = 
+    maybe {
+      return! Some 1
+      return! Some 2
+    }
+  result |> shouldEqual (Some 1)
+
+[<Test>]
+let ``Alternative should work as expected in Result 1`` () =
+  let result : int option = 
+    maybe {
+      return! None
+      return! Some 2
+    }
+  result |> shouldEqual (Some 2)
+
+[<Test>]
+let ``Alternative should work as expected in Result 2`` () =
+  let result : int option = 
+    maybe {
+      return! None
+      return! None
+    }
+  result |> shouldEqual None
+
+[<Test>]
+let ``Alternative should work as expected in Result 3`` () =
+  let mutable executed = false
+  let result : int option = 
+    maybe {
+      return! Some 1
+      executed <- true
+      return! None
+    }
+  result |> shouldEqual (Some 1)
+  executed |> shouldEqual false

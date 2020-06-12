@@ -302,3 +302,43 @@ let ``defaultWith should return content on OK and don't execute the function``()
             Result.defaultWith f (Ok "dog") |> shouldEqual "dog"
             ``f was run`` |> shouldEqual false
          )
+
+[<Test>]
+let ``Alternative should work as expected in Result`` () =
+  let result : Result<int,obj> = 
+    result {
+      return! Ok 1
+      return! Ok 2
+    }
+  Assert.AreEqual(Ok 1, result)
+
+[<Test>]
+let ``Alternative should work as expected in Result 1`` () =
+  let result : Result<int,string> = 
+    result {
+      return! Error "Dog"
+      return! Ok 2
+    }
+  areEqual(Ok 2, result)
+
+[<Test>]
+let ``Alternative should work as expected in Result 2`` () =
+  let result : Result<int,string> = 
+    result {
+      return! Error "Dog"
+      return! Error "Cat"
+    }
+  areEqual(Error "Cat", result)
+
+[<Test>]
+let ``Alternative should work as expected in Result 3`` () =
+  let mutable executed = false
+  let result : Result<int,string> = 
+    result {
+      return! Ok 1
+      executed <- true
+      return! Error "Cat"
+    }
+  areEqual(Ok 1, result)
+  areEqual(false, executed)
+

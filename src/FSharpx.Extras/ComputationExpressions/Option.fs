@@ -16,7 +16,7 @@ module Option =
 
         member this.Zero() = None
 
-        member this.Combine(m, f) = Option.bind f m
+        member this.Combine(x, y) = x |> Option.orElseWith y
 
         member this.Delay(f: unit -> _) = f
 
@@ -34,9 +34,11 @@ module Option =
             this.TryFinally(body res, fun () -> if not (isNull (box res)) then res.Dispose())
 
         member this.While(guard, f) =
-            if not (guard()) then Some () else
-            do f() |> ignore
-            this.While(guard, f)
+            if not (guard()) then
+                this.Zero()
+            else
+                f() |> ignore
+                this.While(guard, f)
 
         member this.For(sequence:seq<_>, body) =
             this.Using(sequence.GetEnumerator(),
