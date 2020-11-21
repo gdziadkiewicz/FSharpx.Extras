@@ -1,14 +1,17 @@
 ﻿module FSharpx.Enum
 open System
 
+/// TODO
 [<CompiledName("TryParse")>]
 let tryParse<'a when 'a :> Enum and 'a : ( new : unit -> 'a ) and 'a:struct > s :'a option =
     s |> Option.fromTryPattern Enum.TryParse
 
+/// TODO
 [<CompiledName("Parse")>]
 let parse<'a when 'a :> Enum > s : 'a =
     Enum.Parse(typeof<'a>, s) :?> 'a
 
+/// TODO
 [<CompiledName("GetValues")>]
 let getValues<'t when 't :> Enum > ()= 
     let values = Enum.GetValues (typeof<'t>)

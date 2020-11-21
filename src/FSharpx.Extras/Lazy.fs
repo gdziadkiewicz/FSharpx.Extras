@@ -5,5 +5,5 @@
 
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
 module FSharpx.Lazy
-
+/// TODO
 let force (x: Lazy<'T>) = x.Force()

@@ -1,11 +1,13 @@
 ﻿namespace FSharpx
 
-/// Generic monadic operators    
+/// Generic monadic operators
 module Operators =
 
     /// Inject a value into the monadic type
     let inline returnM builder x = (^M: (member Return: 'b -> 'c) (builder, x))
+    /// TODO
     let inline bindM builder m f = (^M: (member Bind: 'd * ('e -> 'c) -> 'c) (builder, m, f))
+    /// TODO
     let inline liftM builder f m =
         let inline ret x = returnM builder (f x)
         bindM builder m ret

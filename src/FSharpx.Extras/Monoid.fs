@@ -18,6 +18,7 @@ type Monoid<'T>() =
     abstract Concat : 'T seq -> 'T
     default x.Concat a = x.For(a, id)
 
+
     abstract For: 'T seq * ('T -> 'T) -> 'T
     default x.For(sequence, body) =
         let combine a b = x.Combine(a, body b)
@@ -47,11 +48,13 @@ module Monoid =
             override this.Zero() = m.Zero()
             override this.Combine(a,b) = m.Combine(b,a) }
 
+    /// Monoid for pair of Monoids
     let tuple2 (a: _ Monoid) (b: _ Monoid) =
         { new Monoid<_ * _>() with
             override this.Zero() = a.Zero(), b.Zero()
             override this.Combine((a1,b1), (a2,b2)) = a.Combine(a1, a2), b.Combine(b1, b2) }
-
+    
+    /// Monoid for triplet of Monoids
     let tuple3 (a: 'T Monoid) (b: 'b Monoid) (c: 'c Monoid) =
         { new Monoid<_ * _ * _>() with
             override this.Zero() = a.Zero(), b.Zero(), c.Zero()

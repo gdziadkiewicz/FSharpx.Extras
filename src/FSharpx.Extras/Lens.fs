@@ -2,18 +2,24 @@
 
 open FSharpx
 open FSharpx.Collections
-open FSharpx.Functional
 
+/// TODO
 type Lens<'T,'U> = 
     { Get: 'T -> 'U
       Set: 'U -> 'T -> 'T } 
-
+    
+    /// TODO
     member l.Update f a = l.Set (f (l.Get a)) a
 
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
 module Lens =
+    /// TODO
     let inline get a (l: Lens<_,_>) = l.Get a
+
+    /// TODO
     let inline set v a (l: Lens<_,_>) = l.Set v a
+
+    /// TODO
     let inline update f (l: Lens<_,_>) = l.Update f
 
     /// Sequentially composes two lenses

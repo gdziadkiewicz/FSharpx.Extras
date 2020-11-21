@@ -15,6 +15,7 @@ type ActiveMatch =
 module Regex =
     type Options = RegexOptions
 
+    /// TODO
     let replaceWithAcc folder state input (rx: Regex) =
         let acc = ref state
         let evaluator (m: Match) =
@@ -24,6 +25,7 @@ module Regex =
         let replacement: string = rx.Replace(input, evaluator)
         !acc, replacement
 
+    /// TODO
     let replaceWith replacements input (rx: Regex) =
         let folder replacements (matx: Match) =
             match replacements with
@@ -55,8 +57,10 @@ module Regex =
                        OptionalGroupValues=optionalGroupValues })
             | _ -> None
 
+    /// TODO
     let inline tryMatch pattern input = tryMatchWithOptions Options.CultureInvariant pattern input
 
+    /// TODO
     let inline (|Match|_|) options pattern input = tryMatchWithOptions options pattern input
 
     module Compiled =
@@ -64,7 +68,9 @@ module Regex =
         //then it would be nice for us to detect that and fall back on RegexOptions.None here (compiling is just an
         //optimization detail, doesn't change behavior of regex otherwise, so doing this fall back allows library
         //users to share code between their full vs. silverlight applications more easily).
+        /// TODO
         let (|Match|_|) = (|Match|_|) (Options.Compiled ||| Options.CultureInvariant)
 
     module Interpreted =
+        /// TODO
         let (|Match|_|) = (|Match|_|) Options.CultureInvariant
