@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LayoutOps (FSharpx.Extras)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Steffen Forkmann and others">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://github.com/fsprojects/FSharpx.Extras/content/navbar-fixed-right.css" />
+    <link type="text/css" rel="stylesheet" href="https://github.com/fsprojects/FSharpx.Extras/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://github.com/fsprojects/FSharpx.Extras/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://github.com/fsprojects/FSharpx.Extras/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-right" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://github.com/fsprojects/FSharpx.Extras/"><img id="fsdocs-logo" src="https://github.com/fsprojects/FSharpx.Extras/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/blob/master/LICENSE.md">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/">Source Repository</a></li>
+                <li class="nav-header">
+  Documentation
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/DiningPhilosophers.html">
+    DiningPhilosophers
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/Santa.html">
+    Santa
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/StmSample.html">
+    StmSample
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/UndoSample.html">
+    UndoSample
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/WebProxy.html">
+    WebProxy
+  </a>
+</li>
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat.html">
+      FSharp.Text.StructuredFormat
+    </a>
+  </span>
+</li>             
+<ul list-style-type="none">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-displaymodule.html">
+      Display
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-formatoptions.html">
+      FormatOptions
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-ienvironment.html">
+      IEnvironment
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-joint.html">
+      Joint
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">
+      Layout
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layoutopsmodule.html">
+      LayoutOps
+    </a>
+  </li>
+</ul>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharpx.html">
+      FSharpx
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharpx-collections.html">
+      FSharpx.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharpx-functional.html">
+      FSharpx.Functional
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharpx-http.html">
+      FSharpx.Http
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharpx-io.html">
+      FSharpx.IO
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharpx-linq.html">
+      FSharpx.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharpx-net.html">
+      FSharpx.Net
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharpx-text.html">
+      FSharpx.Text
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://github.com/fsprojects/FSharpx.Extras/">FSharpx.Extras</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    LayoutOps Module
+  </h1>
+  <p>
+    Namespace: 
+    <a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat.html">
+      FSharp.Text.StructuredFormat
+    </a>
+  </p>
+  <p>
+    Assembly: FSharpx.Text.StructuredFormat.dll
+  </p>
+  <div class="fsdocs-xmldoc">
+    
+ A layout is a sequence of strings which have been joined together.
+ The strings are classified as words, separators and left and right parenthesis.
+ This classification determines where spaces are inserted.
+ A joint is either unbreakable, breakable or broken.
+ If a joint is broken the RHS layout occurs on the next line with optional indentation.
+ A layout can be squashed to for given width which forces breaks as required.
+
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '8', 8)" onmouseover="showTip(event, '8', 8)">
+                <p>
+                  <a id="( ++ )">
+                    <a href="#( ++ )">
+                      <code><span><span>layout1</span>&#32;++&#32;<span>layout2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="8">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span><span>layout1</span>&#32;++&#32;<span>layout2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout2
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L101-101" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join, possible break with indent=0
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout2
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '9', 9)" onmouseover="showTip(event, '9', 9)">
+                <p>
+                  <a id="( -- )">
+                    <a href="#( -- )">
+                      <code><span><span>layout1</span>&#32;--&#32;<span>layout2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="9">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span><span>layout1</span>&#32;--&#32;<span>layout2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout2
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L102-102" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join, possible break with indent=1
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout2
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '10', 10)" onmouseover="showTip(event, '10', 10)">
+                <p>
+                  <a id="( --- )">
+                    <a href="#( --- )">
+                      <code><span><span>layout1</span>&#32;---&#32;<span>layout2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="10">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span><span>layout1</span>&#32;---&#32;<span>layout2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout2
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L103-103" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join, possible break with indent=2 
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout2
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '11', 11)" onmouseover="showTip(event, '11', 11)">
+                <p>
+                  <a id="( @@ )">
+                    <a href="#( @@ )">
+                      <code><span><span>layout1</span>&#32;@@&#32;<span>layout2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="11">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span><span>layout1</span>&#32;@@&#32;<span>layout2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout2
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L104-104" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join broken with ident=0
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout2
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '12', 12)" onmouseover="showTip(event, '12', 12)">
+                <p>
+                  <a id="( @@- )">
+                    <a href="#( @@- )">
+                      <code><span><span>layout1</span>&#32;@@-&#32;<span>layout2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="12">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span><span>layout1</span>&#32;@@-&#32;<span>layout2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout2
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L105-105" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join broken with ident=1 
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout2
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
+                <p>
+                  <a id="( @@-- )">
+                    <a href="#( @@-- )">
+                      <code><span><span>layout1</span>&#32;@@--&#32;<span>layout2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="13">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span><span>layout1</span>&#32;@@--&#32;<span>layout2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout2
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L106-106" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join broken with ident=2 
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout2
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
+                <p>
+                  <a id="( ^^ )">
+                    <a href="#( ^^ )">
+                      <code><span><span>layout1</span>&#32;^^&#32;<span>layout2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="14">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span><span>layout1</span>&#32;^^&#32;<span>layout2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout2
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L100-100" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join, unbreakable. 
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout2
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
+                <p>
+                  <a id="aboveL">
+                    <a href="#aboveL">
+                      <code><span>aboveL&#32;<span>layout1&#32;layout2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="15">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>aboveL&#32;<span>layout1&#32;layout2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout2
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L87-87" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Layout two vertically.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout2
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
+                <p>
+                  <a id="aboveListL">
+                    <a href="#aboveListL">
+                      <code><span>aboveListL&#32;<span>layouts</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="16">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>aboveListL&#32;<span>layouts</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layouts
+                      </b>
+                      :
+                      <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L122-122" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Layout list vertically.    
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layouts
+                </span>
+                :
+                <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
+                <p>
+                  <a id="braceL">
+                    <a href="#braceL">
+                      <code><span>braceL&#32;<span>layout</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="17">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>braceL&#32;<span>layout</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L135-135" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Wrap braces around layout.        
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
+                <p>
+                  <a id="bracketL">
+                    <a href="#bracketL">
+                      <code><span>bracketL&#32;<span>Layout</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="18">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>bracketL&#32;<span>Layout</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        Layout
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L120-120" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Wrap round brackets around Layout.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  Layout
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
+                <p>
+                  <a id="commaListL">
+                    <a href="#commaListL">
+                      <code><span>commaListL&#32;<span>layouts</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="19">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>commaListL&#32;<span>layouts</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layouts
+                      </b>
+                      :
+                      <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L116-116" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join layouts into a comma separated list.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layouts
+                </span>
+                :
+                <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
+                <p>
+                  <a id="emptyL">
+                    <a href="#emptyL">
+                      <code><span>emptyL&#32;<span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="20">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>emptyL&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L78-78" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ The empty layout
+
+            </p>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
+                <p>
+                  <a id="isEmptyL">
+                    <a href="#isEmptyL">
+                      <code><span>isEmptyL&#32;<span>layout</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="21">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>isEmptyL&#32;<span>layout</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L79-79" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Is it the empty layout?
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+                <p>
+                  <a id="leftL">
+                    <a href="#leftL">
+                      <code><span>leftL&#32;<span>text</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="22">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>leftL&#32;<span>text</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        text
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L77-77" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ An string which is left  parenthesis (no space on the right).
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  text
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
+                <p>
+                  <a id="listL">
+                    <a href="#listL">
+                      <code><span>listL&#32;<span>selector&#32;value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="23">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>listL&#32;<span>selector&#32;value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        selector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span>'T&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L131-131" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Layout like an F# list.    
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  selector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span>'T&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
+                <p>
+                  <a id="objL">
+                    <a href="#objL">
+                      <code><span>objL&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="24">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>objL&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>obj</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L72-72" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ An uninterpreted leaf, to be interpreted into a string
+ by the layout engine. This allows leaf layouts for numbers, strings and
+ other atoms to be customized according to culture.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>obj</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
+                <p>
+                  <a id="optionL">
+                    <a href="#optionL">
+                      <code><span>optionL&#32;<span>selector&#32;value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="25">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>optionL&#32;<span>selector&#32;value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        selector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span>'T&#32;option</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L127-127" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Layout like an F# option.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  selector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span>'T&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+                <p>
+                  <a id="rightL">
+                    <a href="#rightL">
+                      <code><span>rightL&#32;<span>text</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="26">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>rightL&#32;<span>text</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        text
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L76-76" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ An string which is right parenthesis (no space on the left).
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  text
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+                <p>
+                  <a id="semiListL">
+                    <a href="#semiListL">
+                      <code><span>semiListL&#32;<span>layouts</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="27">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>semiListL&#32;<span>layouts</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layouts
+                      </b>
+                      :
+                      <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L117-117" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join layouts into a semi-colon separated list.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layouts
+                </span>
+                :
+                <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
+                <p>
+                  <a id="sepL">
+                    <a href="#sepL">
+                      <code><span>sepL&#32;<span>text</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="28">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sepL&#32;<span>text</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        text
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L75-75" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ An string which requires no spaces either side.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  text
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
+                <p>
+                  <a id="sepListL">
+                    <a href="#sepListL">
+                      <code><span>sepListL&#32;<span>layout1&#32;layouts</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="29">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sepListL&#32;<span>layout1&#32;layouts</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout1
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layouts
+                      </b>
+                      :
+                      <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L119-119" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join layouts into a list separated using the given Layout.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout1
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layouts
+                </span>
+                :
+                <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
+                <p>
+                  <a id="spaceListL">
+                    <a href="#spaceListL">
+                      <code><span>spaceListL&#32;<span>layouts</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="30">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>spaceListL&#32;<span>layouts</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layouts
+                      </b>
+                      :
+                      <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L118-118" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Join layouts into a space separated list.    
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layouts
+                </span>
+                :
+                <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '31', 31)" onmouseover="showTip(event, '31', 31)">
+                <p>
+                  <a id="squareBracketL">
+                    <a href="#squareBracketL">
+                      <code><span>squareBracketL&#32;<span>layout</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="31">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>squareBracketL&#32;<span>layout</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layout
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L133-133" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Wrap square brackets around layout.    
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '32', 32)" onmouseover="showTip(event, '32', 32)">
+                <p>
+                  <a id="tagAttrL">
+                    <a href="#tagAttrL">
+                      <code><span>tagAttrL&#32;<span>text&#32;maps&#32;layout</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="32">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>tagAttrL&#32;<span>text&#32;maps&#32;layout</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        text
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        maps
+                      </b>
+                      :
+                      <code><span><span>(<span>string&#32;*&#32;string</span>)</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        layout
+                      </b>
+                      :
+                      <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L95-95" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ See tagL
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  text
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  maps
+                </span>
+                :
+                <code><span><span>(<span>string&#32;*&#32;string</span>)</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layout
+                </span>
+                :
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
+                <p>
+                  <a id="tupleL">
+                    <a href="#tupleL">
+                      <code><span>tupleL&#32;<span>layouts</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="33">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>tupleL&#32;<span>layouts</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        layouts
+                      </b>
+                      :
+                      <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L121-121" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Form tuple of layouts.            
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  layouts
+                </span>
+                :
+                <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+                <p>
+                  <a id="unfoldL">
+                    <a href="#unfoldL">
+                      <code><span>unfoldL&#32;<span>selector&#32;folder&#32;state&#32;count</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="34">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>unfoldL&#32;<span>selector&#32;folder&#32;state&#32;count</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        selector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        folder
+                      </b>
+                      :
+                      <code><span>'State&#32;->&#32;<span><span>(<span>'T&#32;*&#32;'State</span>)</span>&#32;option</span></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'State</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        count
+                      </b>
+                      :
+                      <code>int</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L151-151" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ For limitting layout of list-like sequences (lists,arrays,etc).
+ unfold a list of items using (project and z) making layout list via itemL.
+ If reach maxLength (before exhausting) then truncate.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  selector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  folder
+                </span>
+                :
+                <code><span>'State&#32;->&#32;<span><span>(<span>'T&#32;*&#32;'State</span>)</span>&#32;option</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  count
+                </span>
+                :
+                <code>int</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
+                <p>
+                  <a id="wordL">
+                    <a href="#wordL">
+                      <code><span>wordL&#32;<span>text</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="35">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>wordL&#32;<span>text</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        text
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharpx.Extras/tree/master/src/FSharpx.Text.StructuredFormat/StructuredFormat.fs#L74-74" class="fsdocs-source-link">
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github.png" class="normal"/>
+                <img src="https://github.com/fsprojects/FSharpx.Extras/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ An string leaf 
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  text
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://github.com/fsprojects/FSharpx.Extras/reference/fsharp-text-structuredformat-layout.html">Layout</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://github.com/fsprojects/FSharpx.Extras/'</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://github.com/fsprojects/FSharpx.Extras/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+
