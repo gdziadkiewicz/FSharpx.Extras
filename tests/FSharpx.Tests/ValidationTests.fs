@@ -160,4 +160,22 @@ let ``using mapMIgnore`` =
     match vOk with
     | Choice1Of2 () -> ()
     | Choice2Of2 _ -> failwith "Validation failed on success values"
+type Name = private Name of string
+    with
+        member this.Value =
+            let (Name s) = this
+            s
+        member create(s:string) : Choice<Name, NonEmptyList<string>> =
+            returnM s
+            <*> validateLength
+            <*> validateNoWhiteSpace
+            <*> map
 
+type Consumer =
+   {
+        Name: Name 
+        Surname: Surname
+        Age: Age
+    }
+            
+            
