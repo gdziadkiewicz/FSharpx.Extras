@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04, windows-latest, macOS-13]
+        os: [ubuntu-22.04, windows-2025, macOS-13]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -33,7 +33,7 @@ jobs:
       run: ./build.sh
       shell: bash
     - name: Save nuget package as artifact
-      if: matrix.os == 'windows-latest'
+      if: matrix.os == 'windows-2025'
       uses: actions/upload-artifact@v4
       with:
         name: nuget-package
