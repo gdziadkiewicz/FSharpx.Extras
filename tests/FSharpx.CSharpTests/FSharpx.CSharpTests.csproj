@@ -2,13 +2,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>FSharpx.CSharpTests</AssemblyName>
-    <TargetFrameworks>net48;net8;net9</TargetFrameworks>
+    <TargetFrameworks>net48;net8;net9;net10.0</TargetFrameworks>
     <IsPackable>false</IsPackable>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(OS)' != 'Windows_NT' ">
-    <TargetFrameworks>net8;net9</TargetFrameworks>
+    <TargetFrameworks>net8;net9;net10.0</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DataStructures|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
